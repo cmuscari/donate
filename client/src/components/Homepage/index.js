@@ -20,8 +20,8 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="/">
+        GIVE BACK
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -41,7 +41,7 @@ export default function Album() {
         <Toolbar>
           {/* <CameraIcon sx={{ mr: 2 }} /> */}
           <Typography variant="h6" color="inherit" noWrap>
-            Album layout
+            GIVE BACK
           </Typography>
         </Toolbar>
       </AppBar>
@@ -65,9 +65,8 @@ export default function Album() {
               GIVE BACK
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              Something short and leading about the collection below—its contents,
-              the creator, etc. Make it short and sweet, but not too short so folks
-              don&apos;t simply skip over it entirely.
+                View charitable Organizations waiting to be discovered, find out more
+                about them, and help support their cause!
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -75,8 +74,8 @@ export default function Album() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
+              <Button variant="contained">Sign In</Button>
+              <Button variant="outlined">Post a New Organization</Button>
             </Stack>
           </Container>
         </Box>
@@ -92,23 +91,23 @@ export default function Album() {
                     component="img"
                     sx={{
                       // 16:9
-                      pt: '56.25%',
+                      pt: '10.25%',
                     }}
                     image="https://source.unsplash.com/random"
                     alt="random"
+                    id="org-logo"
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                    <Typography gutterBottom variant="h5" component="h2" id="org-name">
+                      ORGANIZATION NAME
                     </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe the
-                      content.
+                    <Typography id="org-loc">
+                      CITY, STATE
                     </Typography>
                   </CardContent>
                   <CardActions>
                     <Button size="small">View</Button>
-                    <Button size="small">Edit</Button>
+                    <Button size="small">Donate</Button>
                   </CardActions>
                 </Card>
               </Grid>
@@ -119,7 +118,7 @@ export default function Album() {
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+          GIVE BACK
         </Typography>
         <Typography
           variant="subtitle1"
@@ -127,7 +126,7 @@ export default function Album() {
           color="text.secondary"
           component="p"
         >
-          Something here to give the footer a purpose!
+          Raising awareness where it is needed most!
         </Typography>
         <Copyright />
       </Box>
