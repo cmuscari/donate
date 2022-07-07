@@ -12,7 +12,7 @@ const typeDefs = gql`
     _id: ID
     category: String
     orgName: String
-    website: URL
+    website: String
     location: String
     description: String
     createdAt: String
@@ -37,14 +37,14 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
-    posts(username: String): [Thought]
-    post(_id: ID!): Thought
+    posts(username: String): [Post]
+    post(_id: ID!): Post
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addPost(category: String!, orgName: String!, website: URL!, location: String!): Post
+    addPost(category: String!, orgName: String!, website: String!, location: String!): Post
     addComment(postId: ID!, commentText: String!): Post
   }
 `;
