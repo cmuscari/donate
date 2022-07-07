@@ -15,9 +15,9 @@ const postSchema = new Schema(
             maxlength: 280
         },
         website: {
-            type: URL,
+            type: String,
             required: true,
-            // match: [(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}(\.[a-z]{2,6}|:[0-9]{3,4})\b([-a-zA-Z0-9@:%_\+.~#?&\/\/=]*), 'Must be a valid url!']
+            match: [/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/, 'Must be a valid url!']
         },
         location: {
             type: String,
