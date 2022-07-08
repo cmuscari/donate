@@ -37,7 +37,7 @@ function Copyright(props) {
 }
 
 const theme = createTheme();
-
+// login function
 export default function Login(props) {
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [login, { error }] = useMutation(LOGIN_USER);
