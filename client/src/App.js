@@ -1,12 +1,16 @@
 import './App.css';
 import Album from './components/Homepage'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
   return (
-    <main> Our App Content Here 
+    <main> 
+      <Header></Header>
       <div>
         <Album></Album>
       </div>
+      <Footer></Footer>
     </main>
   );
 }
