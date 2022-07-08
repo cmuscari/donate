@@ -1,11 +1,15 @@
 import './App.css';
-import Album from './components/Homepage'
+import Login from './pages/Login';
+
+
+
+
 
 function App() {
   return (
-    <main> Our App Content Here 
+    <main> 
       <div>
-        <Album></Album>
+        <Login/>
       </div>
     </main>
   );
