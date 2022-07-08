@@ -16,6 +16,11 @@ const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const theme = createTheme();
 
+
+function consolelog () {
+  console.log("clicked")
+}
+
 export default function Album() {
   return (
     <ThemeProvider theme={theme}>
@@ -83,7 +88,7 @@ export default function Album() {
                   </CardContent>
                   <CardActions>
                     <Button size="small">View</Button>
-                    <Button size="small">Donate</Button>
+                    {/* <Button size="small">Donate</Button> */}
                   </CardActions>
                 </Card>
               </Grid>
