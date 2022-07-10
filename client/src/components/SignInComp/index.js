@@ -1,8 +1,9 @@
 import * as React from "react";
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
+
 import { LOGIN_USER } from "../../utils/mutations";
-import Auth from "../../utils/auth";
+import Auth from "../../utils/auth"
 
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -18,60 +19,43 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        GIVE BACK
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const theme = createTheme();
-// login function
-export default function Login(props) {
-    const [formState, setFormState] = useState({ email: '', password: '' });
-    const [login, { error }] = useMutation(LOGIN_USER);
-  
-    // update state based on form input changes
+
+const SignIn = (props) => {
+    const [formState, setFormState] = useState({ email: "", password: "" });
+    const [loginUser, {error}] = useMutation(LOGIN_USER);
+
+
     const handleChange = (event) => {
-      const { name, value } = event.target;
-  
-      setFormState({
-        ...formState,
-        [name]: value,
-      });
-    };
-  
-    // submit form
-    const handleFormSubmit = async (event) => {
-      event.preventDefault();
-  
-      try {
-        const { data } = await login({
-          variables: { ...formState },
+        const { name, value } = event.target;
+    
+        setFormState({
+          ...formState,
+          [name]: value,
         });
-  
-        Auth.login(data.login.token);
-      } catch (e) {
-        console.error(e);
-      }
-  
-      // clear form values
-      setFormState({
-        email: '',
-        password: '',
-      });
-    };
+      };
+    
+      // submit form
+      const handleSubmit = async (event) => {
+        event.preventDefault();
+    
+        try {
+          const { data } = await loginUser({
+            variables: { ...formState },
+          });
+    
+          Auth.loginUser(data.login.token);
+        } catch (e) {
+          console.error(e);
+        }
+    
+        // clear form values
+        setFormState({
+          email: '',
+          password: '',
+        });
+      };
 
   return (
     <ThemeProvider theme={theme}>
@@ -93,7 +77,7 @@ export default function Login(props) {
           </Typography>
           <Box
             component="form"
-            onSubmit={handleFormSubmit}
+            onSubmit={handleSubmit}
             noValidate
             sx={{ mt: 1 }}
           >
@@ -146,10 +130,11 @@ export default function Login(props) {
               </Grid>
             </Grid>
           </Box>
-          {error && <div>Login failed</div>}
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
+        {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
       </Container>
     </ThemeProvider>
   );
-}
+};
+
+export default SignIn;
