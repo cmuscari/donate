@@ -11,8 +11,10 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Auth from '../../utils/auth';
+import testCategoryIcon from '../../images/icons/animals.png';
+import { Link } from 'react-router-dom';
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -35,35 +37,22 @@ export default function Album() {
         <Box
           sx={{
             bgcolor: 'background.paper',
-            pt: 8,
-            pb: 6,
+            pt: 2,
+            pb: 2,
           }}
         >
           <Container maxWidth="sm">
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="text.primary"
-              gutterBottom
-            >
-              GIVE BACK
-            </Typography>
-            <Typography variant="h5" align="center" color="text.secondary" paragraph>
-                View charitable Organizations waiting to be discovered, find out more
-                about them, and help support their cause!
-            </Typography>
             <Stack
-              sx={{ pt: 4 }}
               direction="row"
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Filter Results</Button>
+              <Button id="filter-button" variant="contained">Filter Results</Button>
               {Auth.loggedIn() ? (<>
-              <Button variant="outlined" onClick={navigateToNewPost}>Post a New Organization</Button>
+                <Button variant="outlined" onClick={navigateToNewPost}>Post a New Organization</Button>
               </>) : (
-              <></>)}
+
+                <></>)}
             </Stack>
           </Container>
         </Box>
@@ -72,33 +61,24 @@ export default function Album() {
           <Grid container spacing={4}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                >
-                  <CardMedia
-                    component="img"
-                    sx={{
-                      // 16:9
-                      pt: '10.25%',
-                    }}
-                    image="https://source.unsplash.com/random"
-                    alt="random"
-                    id="org-logo"
-                    className="org-logo"
-                  />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2" id="org-name">
-                      ORGANIZATION NAME
-                    </Typography>
-                    <Typography id="org-loc">
-                      CITY, STATE
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small">View</Button>
-                    {/* <Button size="small">Donate</Button> */}
-                  </CardActions>
-                </Card>
+                <Link to="/">
+                  <Card id="org-container"
+                    sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                  >
+                    <CardContent className="container-content" sx={{ flexGrow: 1 }}>
+                      <img className="category-icon" src={testCategoryIcon} />
+                      <Typography gutterBottom variant="h5" component="h2" id="org-name" className="org-name">
+                        Organization Name
+                      </Typography>
+                      <Typography id="org-loc" className="org-loc">
+                        City, State
+                      </Typography>
+                    </CardContent>
+                    {/* <CardActions>
+                      <Button size="small">View</Button>
+                    </CardActions> */}
+                  </Card>
+                </Link>
               </Grid>
             ))}
           </Grid>

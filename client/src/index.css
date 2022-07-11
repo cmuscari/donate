@@ -7,21 +7,75 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#filter-button {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  background-color: #153741;
+  font-size: 25px;
+  border-radius: 0px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
-header {
-  background-color: rgb(0, 102, 255);
-  color:white;
-  top: 0;
-  padding: 1%;
-  position: relative;
+#filter-button:hover {
+  transform: scale(1.15);
+  transition: all 0.35s ease-in-out;
+  background-color: #2b7685;
 }
 
-.org-logo {
-  height: 200px;
+#org-container {
+  border: solid 1px black;
+  border-radius: 10px;
+  align-items:center;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+#org-container:hover {
+  transform: scale(1.10);
+  transition: all 0.40s ease-in-out;
+}
+
+.container-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-icon {
+  height: 75px;
+  width: auto;
+  align-items: center;
+}
+
+#org-name {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+#org-loc {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  text-align: center;
+  font-size: 20px;
+}
+
+.footer-container {
+  background-color: #153741;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#footer-text {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  text-align: center;
+  font-size: 20px;
+  color: white;
 }
 
 .post-form {
@@ -52,17 +106,6 @@ header {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
-}
-
-nav a {
-  float: right;
-  color: white;
-  padding-left: 10rem;
-}
-
-.nav-head {
-  color:white;
-  text-decoration: none;
 }
 
 a:link { text-decoration: none; }
