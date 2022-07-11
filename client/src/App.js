@@ -1,8 +1,52 @@
 import './App.css';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import Login from './pages/Login';
+import SignUpPage from './pages/SignUp';
+
+
+
+
+import Album from './components/Homepage'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import SignUp from './components/SignUpComp';
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <main> Our App Content Here </main>
+    <ApolloProvider client={client}>
+    <main> 
+      <Header></Header>
+      <div>
+        <SignUp/>
+      </div>
+      <Footer></Footer>
+    </main>
+    </ApolloProvider>
   );
 }
 

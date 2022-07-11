@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+header {
+  background-color: rgb(0, 102, 255);
+  color:white;
+  top: 0;
+  padding: 1%;
+  position: relative;
+}
+
+.org-logo {
+  height: 200px;
+}
