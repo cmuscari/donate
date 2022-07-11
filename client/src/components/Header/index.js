@@ -11,25 +11,27 @@ const Header = () => {
 
     return (
         <header>
-            <div>
+            <div className='header'>
+                <>
                 <Link to="/">
                     <h1 className="nav-head">GIVE BACK</h1>
                 </Link>
 
                 <nav>
                 {Auth.loggedIn() ? (
-                <>
-                     <a href="/" onClick={logout}>
+                
+                <a href="/" onClick={logout}>
                      Logout
-                 </a>
-                </>
-              ) : (
-                 <>
+                </a>
+               
+                ) : (
+                <>
                     <Link to="/login">Sign In</Link>
                     <Link to="/signup">Sign Up</Link>
-                    </>
+                </>
                 )}
                 </nav>
+                </>
             </div>
         </header>
     )

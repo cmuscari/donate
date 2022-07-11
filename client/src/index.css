@@ -12,13 +12,18 @@ code {
     monospace;
 }
 
-header {
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
   background-color: rgb(0, 102, 255);
   color:white;
   top: 0;
   padding: 1%;
   position: relative;
 }
+
 
 .org-logo {
   height: 200px;
