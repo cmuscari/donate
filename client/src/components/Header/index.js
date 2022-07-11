@@ -1,23 +1,23 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-// import Auth from '../../utils/auth';
+import Auth from '../../utils/auth';
 
 const Header = () => {
-    // const logout = event => {
-    //     event.preventDefault();
-    //     Auth.logout();
-    //   };
+    const logout = event => {
+        event.preventDefault();
+        Auth.logout();
+      };
 
     return (
         <header>
             <div>
-                {/* <Link to="/"> */}
-                    <h1>GIVE BACK</h1>
-                {/* </Link> */}
+                <Link to="/">
+                    <h1 className="nav-head">GIVE BACK</h1>
+                </Link>
 
                 <nav>
-                {/* {Auth.loggedIn() ? (
+                {Auth.loggedIn() ? (
                 <>
                      <a href="/" onClick={logout}>
                      Logout
@@ -25,10 +25,10 @@ const Header = () => {
                 </>
               ) : (
                  <>
-                    <Link to="/login">Login</Link>
-                    <Link to="/signup">Signup</Link>
+                    <Link to="/login">Sign In</Link>
+                    <Link to="/signup">Sign Up</Link>
                     </>
-                )} */}
+                )}
                 </nav>
             </div>
         </header>

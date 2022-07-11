@@ -11,17 +11,22 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {useNavigate} from 'react-router-dom';
+import Auth from '../../utils/auth';
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const theme = createTheme();
 
 
-function consolelog () {
-  console.log("clicked")
-}
 
 export default function Album() {
+
+  const navigate = useNavigate();
+  const navigateToNewPost = () => {
+    navigate('/post');
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -55,7 +60,10 @@ export default function Album() {
               justifyContent="center"
             >
               <Button variant="contained">Filter Results</Button>
-              <Button variant="outlined">Post a New Organization</Button>
+              {Auth.loggedIn() ? (<>
+              <Button variant="outlined" onClick={navigateToNewPost}>Post a New Organization</Button>
+              </>) : (
+              <></>)}
             </Stack>
           </Container>
         </Box>
