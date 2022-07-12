@@ -39,7 +39,6 @@
 }
 
 .nav-links:hover {
-  transform: scale(1.15);
   transition: all 0.35s ease-in-out;
   color: #2b7685;
 }

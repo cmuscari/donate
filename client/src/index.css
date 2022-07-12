@@ -7,18 +7,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#filter-button {
+#filter-button,
+#new-post-button {
   font-family: 'Montserrat', sans-serif;
   color: white;
   background-color: #153741;
-  font-size: 25px;
+  font-size: 18px;
   border-radius: 0px;
-  padding-left: 25px;
-  padding-right: 25px;
 }
 
-#filter-button:hover {
-  transform: scale(1.15);
+#filter-button:hover,
+#new-post-button:hover {
+  transform: scale(1.05);
   transition: all 0.35s ease-in-out;
   background-color: #2b7685;
 }
@@ -26,7 +26,7 @@ body {
 #org-container {
   border: solid 1px black;
   border-radius: 10px;
-  align-items:center;
+  align-items: center;
   box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
@@ -48,17 +48,19 @@ body {
   align-items: center;
 }
 
-#org-name {
-  font-family: 'Barlow Semi Condensed', sans-serif;
-  text-align: center;
-  font-size: 30px;
+#org-name,
+#org-web,
+#org-loc {
+  text-align: left;
+  font-size: 15px;
   margin-top: 10px;
 }
 
-#org-loc {
-  font-family: 'Barlow Semi Condensed', sans-serif;
-  text-align: center;
-  font-size: 20px;
+#org-desc {
+  text-align: left;
+  font-size: 15px;
+  margin-top: 10px;
+  height: 100px;
 }
 
 .footer-container {
@@ -74,30 +76,44 @@ body {
 #footer-text {
   font-family: 'Barlow Semi Condensed', sans-serif;
   text-align: center;
-  font-size: 20px;
+  font-size: 17px;
   color: white;
 }
 
-.post-form {
-  /* Change background color */
-  background-color: none;
-
-  /* Add border */
-  border: 1px solid darkgrey;
-
-  /* Add space between the border and the content */
-  padding: 20px 80px;
-
-  border-radius: 12px;
-
-  margin: auto;
-
-  max-width: 40%;
-
-
+#login-btn,
+#signup-btn {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  background-color: #153741;
+  font-size: 18px;
 }
 
-.pinput, .pselect, .ptextarea {
+#login-btn:hover,
+#signup-btn:hover {
+  transform: scale(1.03);
+  transition: all 0.30s ease-in-out;
+  background-color: #2b7685;
+}
+
+
+.post-form {
+  /* Change background color */
+  background-color: #f1f2f2;
+  /* Add border */
+  border: 1px solid darkgrey;
+  /* Add space between the border and the content */
+  padding: 20px 80px;
+  border-radius: 12px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40%;
+}
+
+.pinput,
+.pselect,
+.ptextarea {
   width: 100%;
   padding: 12px;
   border: 1px solid darkgrey;
@@ -108,27 +124,46 @@ body {
   resize: vertical;
 }
 
-a:link { text-decoration: none; }
-a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
-a:active { text-decoration: none; }
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
 
 .newpost-head {
+  font-family: 'Barlow Semi Condensed', sans-serif;
   text-align: center;
-  padding: 3rem;
+  padding: 2rem;
+}
+
+.post-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .post-btn {
-  background-color: rgb(91, 91, 225);
-  border: none;
+  font-family: 'Montserrat', sans-serif;
   color: white;
-  font-size: 1.5rem;
-  border-radius:10%;
-  padding: 2%;
-  cursor: pointer;
-  width:150px;margin:0 50%;position:relative;left:-75px;
+  background-color: #153741;
+  font-size: 18px;
+  border: none;
+  width: 100%;
+  padding: 5px;
 }
 
 .post-btn:hover {
-  background-color: rgb(45, 45, 222);
+  transform: scale(1.03);
+  transition: all 0.30s ease-in-out;
+  background-color: #2b7685;
 }

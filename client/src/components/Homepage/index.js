@@ -41,15 +41,15 @@ export default function Album() {
             pb: 2,
           }}
         >
-          <Container maxWidth="sm">
+          <Container maxWidth="md">
             <Stack
-              direction="row"
+              direction="column"
               spacing={2}
               justifyContent="center"
             >
-              <Button id="filter-button" variant="contained">Filter Results</Button>
+              <Button id="filter-button" variant="contained">Search by Category</Button>
               {Auth.loggedIn() ? (<>
-                <Button variant="outlined" onClick={navigateToNewPost}>Post a New Organization</Button>
+                <Button id="new-post-button" variant="outlined" onClick={navigateToNewPost}>Post a New Organization</Button>
               </>) : (
 
                 <></>)}
