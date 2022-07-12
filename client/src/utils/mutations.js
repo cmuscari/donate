@@ -23,3 +23,17 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_POST = gql`
+  mutation addPost($location: String!, $website: String!, $orgName: String!, $category: String!) {
+    addPost(location: $location, website: $website, orgName: $orgName, category: $category) {
+      _id
+      category
+      orgName
+      website
+      location
+      description
+      username
+    }
+  }
+`
