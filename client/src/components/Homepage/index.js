@@ -67,10 +67,10 @@ export default function Album() {
                   >
                     <CardContent className="container-content" sx={{ flexGrow: 1 }}>
                       <img className="category-icon" src={testCategoryIcon} />
-                      <Typography gutterBottom variant="h5" component="h2" id="org-name" className="org-name">
+                      <Typography gutterBottom variant="h5" component="h2" id="org-card-name" className="org-card-name">
                         Organization Name
                       </Typography>
-                      <Typography id="org-loc" className="org-loc">
+                      <Typography id="org-card-loc" className="org-card-loc">
                         City, State
                       </Typography>
                     </CardContent>
