@@ -10,6 +10,7 @@ export default function BasicSelect() {
 
   const handleChange = (event) => {
     setCategory(event.target.value);
+    console.log(event.target.value);
   };
 
   return (
@@ -23,9 +24,10 @@ export default function BasicSelect() {
           label="Category"
           onChange={handleChange}
         >
-          <MenuItem value={health}>Health</MenuItem>
-          <MenuItem value={children}>Children</MenuItem>
-          <MenuItem value={education}>Education</MenuItem>
+          <MenuItem value={0}>None</MenuItem>
+          <MenuItem value={1}>Health</MenuItem>
+          <MenuItem value={2}>Children</MenuItem>
+          <MenuItem value={3}>Education</MenuItem>
         </Select>
       </FormControl>
     </Box>

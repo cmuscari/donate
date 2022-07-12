@@ -13,19 +13,24 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {useNavigate} from 'react-router-dom';
 import Auth from '../../utils/auth';
+import BasicSelect from '../Select';
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const theme = createTheme();
 
-
-
 export default function Album() {
 
-  const navigate = useNavigate();
-  const navigateToNewPost = () => {
-    navigate('/post');
-  }
+    const { loading, data } = useQuery(QUERY_POSTS);
+    const { data } = useQuery(QUERY_POSTS_BY_CATEGORY);
+    const posts = data?.posts || [];
+  
+    const loggedIn = Auth.loggedIn();
+
+  // const navigate = useNavigate();
+  // const navigateToNewPost = () => {
+  //   navigate('/post');
+  // }
 
   return (
     <ThemeProvider theme={theme}>
@@ -59,7 +64,8 @@ export default function Album() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Filter Results</Button>
+              {/* <Button variant="contained">Filter Results</Button> */}
+              <BasicSelect />
               {Auth.loggedIn() ? (<>
               <Button variant="outlined" onClick={navigateToNewPost}>Post a New Organization</Button>
               </>) : (
