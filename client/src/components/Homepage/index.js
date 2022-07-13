@@ -40,18 +40,17 @@ export default function Album() {
 
 
 
-  // render category icon based on selected category name
-  const getIcon = () => {
-    if (`${posts.category}` === 'children') {
-      return '../images/icons/children.png';
-    } else {
-      return '../images/icons/animals.png';
-    }
-  };
+  // // render category icon based on selected category name
+  // const getIcon = () => {
+  //   if (`${posts.category}` === 'children') {
+  //     return '../images/icons/children.png';
+  //   } else {
+  //     return '../images/icons/animals.png';
+  //   }
+  // };
 
-  let categoryIcon = getIcon();
+  // let categoryIcon = getIcon();
 
-  console.log(categoryIcon);
 
 
 

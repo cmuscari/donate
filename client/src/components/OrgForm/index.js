@@ -1,13 +1,76 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_POST } from '../../utils/mutations';
+import { QUERY_ORGS } from '../../utils/queries';
 
-function OrgForm() {
+
+
+const OrgForm = () => {
+
+    const [addPost, { error }] = useMutation(ADD_POST
+        //     , {
+        //     update(cache, { data: { addPost } }) {
+
+        //         // update post array's cache
+        //         const { posts } = cache.readQuery({ query: QUERY_ORGS });
+        //         cache.writeQuery({
+        //             query: QUERY_ORGS,
+        //             data: { posts: [addPost, ...posts] },
+        //         });
+        //     }
+        // }
+    );
+
+
+    const [textInfo, setTextInfo] = useState({
+        category: "",
+        orgName: "",
+        location: "",
+        website: "",
+        description: "",
+        username: "",
+    });
+
+    const handleFormSubmit = async event => {
+        event.preventDefault();
+        console.log(textInfo);
+
+        try {
+            // add post to database
+            const {data} = await addPost({
+                variables: { ...textInfo }
+            });
+
+            // clear form value
+            setTextInfo({
+                category: "",
+                orgName: "",
+                location: "",
+                website: "",
+                description: "",
+                username: "",
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    };
+
+
+    const inputChange = (event) => {
+        const { name, value } = event.target;
+        // console.log(name, value);
+        setTextInfo({ ...textInfo, [name]: value })
+        // console.log(textInfo);
+    }
+
+
     return (
         <div>
-            <form className="post-form">
+            <form className="post-form" onSubmit={handleFormSubmit}>
                 <div>
                     <h2 className="newpost-head">Let others know what YOU care about.<br></br>Share an organization here!</h2>
                     <label htmlFor="category">Select a Category:</label>
-                    <select id="category" name="category" className='pselect'>
+                    <select onChange={inputChange} id="category" name="category" className='pselect' value={textInfo.category}>
                         <option value="animals">Animals</option>
                         <option value="art-cultre">Arts & Culture</option>
                         <option value="children">Children</option>
@@ -22,19 +85,19 @@ function OrgForm() {
                 </div>
                 <div>
                     <label htmlFor="org-name">Organization Name:</label>
-                    <input type="text" id="org-name" name="org-name" className="pinput"></input>
+                    <input onChange={inputChange} type="text" id="org-name" name="orgName" className="pinput" value={textInfo.orgName}></input>
                 </div>
                 <div>
                     <label htmlFor="org-web">Organization Website:</label>
-                    <input type="text" id="org-web" name="org-web" className="pinput"></input>
+                    <input onChange={inputChange} type="text" id="org-web" name="website" className="pinput" value={textInfo.website}></input>
                 </div>
                 <div>
                     <label htmlFor="loc" id="loc" name="loc">Location (city, state):</label>
-                    <input type="text" id="org-loc" name="loc" className="pinput"></input>
+                    <input onChange={inputChange} type="text" id="org-loc" name="location" className="pinput" value={textInfo.location}></input>
                 </div>
                 <div>
                     <label htmlFor="desc" id="desc" name="desc">Description:</label>
-                    <textarea type="text" id="org-desc" name="desc" className="pinput"></textarea>
+                    <textarea onChange={inputChange} type="text" id="org-desc" name="description" className="pinput" value={textInfo.description}></textarea>
                 </div>
                 <div className="post-btn-container">
                     <button type="submit" name="submit-button" className="post-btn">
@@ -44,6 +107,8 @@ function OrgForm() {
             </form>
         </div>
     )
-}
+};
 
 export default OrgForm;
+
+
