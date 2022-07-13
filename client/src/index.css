@@ -63,6 +63,10 @@ body {
   height: 100px;
 }
 
+.-footer {
+  min-height: calc(100%-40px);
+}
+
 .footer-container {
   background-color: #153741;
   height: 40px;
