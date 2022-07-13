@@ -3,16 +3,18 @@ import { useQuery } from '@apollo/client';
 import { QUERY_ORG } from '../utils/queries';
 import { useParams } from 'react-router-dom';
 import React from 'react';
+import testCategoryIcon from '../images/icons/animals.png';
+
 
 const SingleOrg = (props) => {
     const { id: orgId } = useParams();
-    
+
     const { loading, data } = useQuery(QUERY_ORG, {
-        variables: { id: orgId},
+        variables: { id: orgId },
     });
 
     const post = data?.post || {};
-    
+
     if (loading) {
         return <div>Loading...</div>
     };
@@ -20,20 +22,29 @@ const SingleOrg = (props) => {
     return (
         <div>
             <div className="orgCard">
-                <p className="orgCard-header">
-                    <span>
-                        {post.orgName}
-                    </span>{' '}
-                </p>
-                <div className='orgCard-web'>
-                    <a href={`${post.website}`} target='_blank' rel='noreferrer'>{post.website}</a>
+                <img className="single-org-icon" src={testCategoryIcon} />
+                <div>
+                    <p className="category-name"><strong>{post.category}</strong></p>
                 </div>
-                <div className='orgCard-loc'>
-                    <p>{post.location}</p>
+                <div className="single-org-item-container">
+                    <p className='single-org-title'><strong>Organization Name:</strong></p>
+                    <p className='single-org-item'>{post.orgName}</p>
                 </div>
-                <div className='orgCard-desc'>
-                    <p>{post.description}</p>
+                <div className="single-org-item-container">
+                    <p className='single-org-title'><strong>Website:</strong></p>
+                    <a className='single-org-item website-link' href={`${post.website}`} target='_blank' rel='noreferrer'>{post.website}</a>
                 </div>
+                <div className="single-org-item-container">
+                    <p className='single-org-title'><strong>Location:</strong></p>
+                    <p className='single-org-item'>{post.location}</p>
+                </div>
+                <div className="single-org-item-container">
+                    <p className='single-org-title'><strong>Description:</strong></p>
+                    <p className='single-org-item'>{post.description}</p>
+                </div>
+                <a href={`${post.website}`} target='_blank'>
+                    <button type="submit" id="donate-btn">DONATE NOW</button>
+                </a>
             </div>
         </div>
     )
