@@ -13,7 +13,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import Auth from '../../utils/auth';
-import Images from '../Images'
+import Icons from '../Icons'
 import { Link } from 'react-router-dom';
 import { QUERY_ORGS } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
@@ -94,7 +94,7 @@ export default function Album() {
                       sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                     >
                       <CardContent className="container-content" sx={{ flexGrow: 1 }}>
-                        <img className="category-icon" src={Images.arts} />
+                        <img className="category-icon" src={Icons.arts} />
                         <Typography gutterBottom variant="h5" component="h2" id="org-card-name" className="org-name">
                           {post.orgName}
                         </Typography>

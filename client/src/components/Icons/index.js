@@ -1,4 +1,4 @@
-const Images = {
+const Icons = {
   animals: require("../../images/icons/animals.png"),
   arts: require("../../images/icons/arts.png"),
   children: require("../../images/icons/children.png"),
@@ -11,4 +11,4 @@ const Images = {
   military: require("../../images/icons/military.png"),
 };
 
-export default Images;
+export default Icons;

@@ -9,7 +9,7 @@ function OrgForm() {
                     <label htmlFor="category">Select a Category:</label>
                     <select id="category" name="category" className='pselect'>
                         <option value="animals">Animals</option>
-                        <option value="art-cultre">Arts & Culture</option>
+                        <option value="art-culture">Arts & Culture</option>
                         <option value="children">Children</option>
                         <option value="education">Education</option>
                         <option value="environmental">Environmental</option>
