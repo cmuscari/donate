@@ -1,17 +1,9 @@
 import './App.css';
-import StripeContainer from '../components/StripeContainer';
-import { useState } from 'react';
-
-function App() {
-  // state for stripe payments
-  const [showItem, setShowItem ] = useState(false);
-
-  //TODO: Set up button styling and login for onClick
-  //TODO: GET FRONT END CODE AND ADD BUTTON AND LOGIC IN APP RETURN
-  return (
-    <main> Our App Content Here </main>
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import StripeContainer from './components/StripeContainer';
+import { useState } from 'react';
+
 
 import Login from './pages/Login';
 import Album from './components/Homepage'
@@ -30,35 +22,10 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-app.post('/donate', cors(), async (req, response) =>{
-  let { amount, id } = req.body
-
-  try {
-      // async function straight from stripe api to get payment info/object
-      const payment = await stripe.paymentIntents.create({
-          amount,
-          currency: "USD",
-          description: "Donation to online charity board",
-          payment_method: id,
-          confirm: true
-      })
-      console.log("Payment", payment)
-      response.json({
-          message: "Payment successful",
-          success: true
-      })
-  } catch (error) {
-      console.log("Error", error)
-      response.json({
-          message: "Payment failed",
-          success: false
-      })
-  }
-});
-
-
-
 function App() {
+  
+  const [showItem, setShowItem] = useState(false);
+
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -80,7 +47,6 @@ function App() {
       </Router>
     </ApolloProvider>
   );
-
 }
 
 export default App;
