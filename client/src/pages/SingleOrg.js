@@ -3,9 +3,10 @@ import { useQuery } from '@apollo/client';
 import { QUERY_ORG } from '../utils/queries';
 import { useParams } from 'react-router-dom';
 import React from 'react';
-import testCategoryIcon from '../images/icons/animals.png';
-import childrenIcon from '../images/icons/children.png';
+// import childrenIcon from '../images/icons/children.png';
 import { ContactsOutlined } from '@material-ui/icons';
+
+
 
 
 const SingleOrg = (props) => {
@@ -23,22 +24,24 @@ const SingleOrg = (props) => {
 
 
     // render category icon based on selected category name
-    let categoryIcon = () => {
+        const getIcon = () => {
         if (`${post.category}` === 'children') {
-            return {childrenIcon};
+            return '../images/icons/children.png';
         } else {
-            return {testCategoryIcon};
+            return  '../images/icons/animals.png';
         }
     };
 
-    console.log(categoryIcon());
+    let categoryIcon = getIcon();
+
+    console.log(categoryIcon);
 
 
 
     return (
         <div>
             <div className="orgCard">
-                <img className="single-org-icon" src={categoryIcon()} />
+                <img id="icon" className="single-org-icon" src={`${categoryIcon}`} />
                 <div>
                     <p className="category-name"><strong>{post.category}</strong></p>
                 </div>
