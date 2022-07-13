@@ -10,7 +10,8 @@ const StoreProvider = ({ children }) => {
     }
 
 
-  return <Provider value={{category, newCategory}}>{children}</Provider>;
+    return <Provider value={{category, newCategory}}>{children}</Provider>;
+
 };
 
 const useStoreContext = () => {

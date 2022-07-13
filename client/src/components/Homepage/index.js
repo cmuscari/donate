@@ -17,6 +17,9 @@ import testCategoryIcon from '../../images/icons/animals.png';
 import { Link } from 'react-router-dom';
 import { QUERY_ORGS } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
+import Select from '../Select';
+import { QUERY_POSTS_BY_CATEGORY } from '../../utils/queries';
+import { useStoreContext } from '../../utils/globalstate';
 
 
 
@@ -74,7 +77,8 @@ export default function Album() {
               spacing={2}
               justifyContent="center"
             >
-              <Button id="filter-button" variant="contained">Search by Category</Button>
+              <Select/>
+              {/* <Button id="filter-button" variant="contained">Search by Category</Button> */}
               {Auth.loggedIn() ? (<>
                 <Button id="new-post-button" variant="outlined" onClick={navigateToNewPost}>Post a New Organization</Button>
               </>) : (
