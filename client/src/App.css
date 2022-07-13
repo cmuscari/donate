@@ -71,7 +71,7 @@
   text-align: center;
   font-family: 'Barlow Semi Condensed', sans-serif;
   color: black;
-  margin-bottom: 150px;
+  margin-bottom: 40px;
   background-color: #f1f2f2;
   border: 1px solid darkgrey;
 }
@@ -96,7 +96,7 @@
   margin: 7px;
 }
 
-.single-org-title {
+.single-org-title, .comments-title {
   font-size: 20px;
   margin-bottom: 7px;
 }
@@ -128,6 +128,53 @@
   background-color: #2b7685;
 }
 
+.comments-section {
+  padding-top: 25px;
+  padding-bottom: 40px;
+  padding-left: 60px;
+  padding-right: 60px;
+  border-radius: 12px;
+  margin: auto;
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  color: black;
+  margin-bottom: 150px;
+  background-color: #f1f2f2;
+  border: 1px solid darkgrey;
+}
+
+.comments-content {
+  width: 100%;
+}
+
+#comments-text {
+  width: 100%;
+  height: 125px;
+  margin-top: 20px;
+}
+
+#comments-btn {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  background-color: #153741;
+  font-size: 18px;
+  border: none;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+
+#comments-btn:hover {
+  transform: scale(1.03);
+  transition: all 0.30s ease-in-out;
+  background-color: #2b7685;
+}
+
 
 
 
@@ -141,6 +188,36 @@
 
 
 /* RESPONSIVE */
+
+@media screen and (max-width: 550px) {
+
+  .header-container {
+    height: 225px;
+  }
+
+  .header-text {
+    font-size: 90px;
+  }
+
+  .nav-links {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+  }
+  
+  .header-subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+
+
+
+
+}
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -157,10 +234,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
