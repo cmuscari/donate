@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import React from 'react';
 import testIcon from '../images/icons/animals.png';
 import { ContactsOutlined } from '@material-ui/icons';
+import Icons from '../components/Icons'
 
 
 
@@ -23,25 +24,36 @@ const SingleOrg = (props) => {
     };
 
 
-    // // render category icon based on selected category name
-    //     const getIcon = () => {
-    //     if (`${post.category}` === 'children') {
-    //         return '../images/icons/children.png';
-    //     } else {
-    //         return  '../images/icons/animals.png';
-    //     }
-    // };
-
-    // let categoryIcon = getIcon();
-
-    // console.log(categoryIcon);
-
-
+    // render category icon based on selected category name
+    const getIcon = () => {
+        if (`${post.category}` === 'animals') {
+            return Icons.animals;
+        } else if (`${post.category}` === "arts") {
+            return Icons.arts;
+        } else if (`${post.category}` === "children") {
+            return Icons.children;
+        } else if (`${post.category}` === "civil-rights") {
+            return Icons.civilrights;
+        } else if (`${post.category}` === "education") {
+            return Icons.education;
+        } else if (`${post.category}` === "environmental") {
+            return Icons.environmental;
+        } else if (`${post.category}` === "health") {
+            return Icons.health;
+        } else if (`${post.category}` === "humanitarian") {
+            return Icons.humanitarian;
+        } else if (`${post.category}` === "international") {
+            return Icons.international;
+        } else {
+            return Icons.military;
+        }
+    };
+    let categoryIcon = getIcon();
 
     return (
         <div>
             <div className="orgCard">
-                <img id="icon" className="single-org-icon" src={testIcon} />
+                <img id="icon" className="single-org-icon" src={categoryIcon} />
                 <div>
                     <p className="category-name"><strong>{post.category}</strong></p>
                 </div>
