@@ -48,11 +48,12 @@ const SingleOrg = (props) => {
             return Icons.military;
         }
     };
+    let categoryIcon = getIcon();
 
     return (
         <div>
             <div className="orgCard">
-                <img id="icon" className="single-org-icon" src={`getIcon(${post.category})`} />
+                <img id="icon" className="single-org-icon" src={categoryIcon} />
                 <div>
                     <p className="category-name"><strong>{post.category}</strong></p>
                 </div>
