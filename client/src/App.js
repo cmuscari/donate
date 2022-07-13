@@ -1,7 +1,6 @@
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import StripeContainer from './components/StripeContainer';
 import { useState } from 'react';
 
 
@@ -12,6 +11,7 @@ import Footer from './components/Footer'
 import OrgForm from './components/OrgForm';
 import SignUpPage from './pages/SignUp';
 import SingleOrg from './pages/SingleOrg';
+import DonatePage from './pages/Donate';
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
@@ -23,7 +23,7 @@ const client = new ApolloClient({
 });
 
 function App() {
-  
+
   const [showItem, setShowItem] = useState(false);
 
   return (
@@ -39,6 +39,7 @@ function App() {
                 <Route path="/signup" element={<SignUpPage />} />
                 <Route path="/post" element={<OrgForm />} />
                 <Route path="/organization/:id" element={<SingleOrg />} />
+                <Route path='/donate' element={<DonatePage />} />
               </Routes>
             </div>
           </div>

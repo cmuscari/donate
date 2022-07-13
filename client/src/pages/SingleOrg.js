@@ -6,11 +6,14 @@ import React from 'react';
 import childrenIcon from '../images/icons/children.png';
 import animalsIcon from '../images/icons/animals.png';
 import { ContactsOutlined } from '@material-ui/icons';
+import { useState } from 'react';
 
 
 
 
 const SingleOrg = (props) => {
+    const [showItem, setShowItem] = useState(false)
+
     const { id: orgId } = useParams();
 
     const { loading, data } = useQuery(QUERY_ORG, {
@@ -36,7 +39,6 @@ const SingleOrg = (props) => {
     let categoryIcon = getIcon();
 
     console.log(categoryIcon);
-
 
 
     return (
@@ -66,7 +68,7 @@ const SingleOrg = (props) => {
                     <p className='single-org-title'><strong>Shared by:</strong></p>
                     <p className='single-org-item'>{post.username}</p>
                 </div>
-                <a href={`${post.website}`} target='_blank'>
+                <a href={'/donate'} target='_blank'>
                     <button type="submit" id="donate-btn">DONATE NOW</button>
                 </a>
             </div>
