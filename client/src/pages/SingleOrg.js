@@ -61,9 +61,20 @@ const SingleOrg = (props) => {
                     <p className='single-org-title'><strong>Description:</strong></p>
                     <p className='single-org-item'>{post.description}</p>
                 </div>
+                <div className="single-org-item-container">
+                    <p className='single-org-title'><strong>Shared by:</strong></p>
+                    <p className='single-org-item'>{post.username}</p>
+                </div>
                 <a href={`${post.website}`} target='_blank'>
                     <button type="submit" id="donate-btn">DONATE NOW</button>
                 </a>
+            </div>
+            <div className="comments-section">
+                <div className="comments-content">
+                    <label htmlFor="comments-title" id="comments-title" name="comments-title" className="comments-title"><strong>Comments:</strong></label>
+                    <textarea type="text" id="comments-text" name="comments-text" className="pinput"></textarea>
+                </div>
+                <button type="submit" id="comments-btn">SUBMIT</button>
             </div>
         </div>
     )
