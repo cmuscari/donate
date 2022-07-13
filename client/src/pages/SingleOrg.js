@@ -3,7 +3,6 @@ import { useQuery } from '@apollo/client';
 import { QUERY_ORG } from '../utils/queries';
 import { useParams } from 'react-router-dom';
 import React from 'react';
-import testIcon from '../images/icons/animals.png';
 import { ContactsOutlined } from '@material-ui/icons';
 import Icons from '../components/Icons'
 
@@ -78,7 +77,8 @@ const SingleOrg = (props) => {
     let catName = getCatName();
 
 
-    
+    console.log(post.description);
+    console.log(post.location);
 
 
 
