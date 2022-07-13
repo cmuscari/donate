@@ -24,7 +24,7 @@ const theme = createTheme();
 
 const SignIn = (props) => {
     const [formState, setFormState] = useState({ email: "", password: "" });
-    const [loginUser, {error}] = useMutation(LOGIN_USER);
+    const [login, {error}] = useMutation(LOGIN_USER);
 
 
     const handleChange = (event) => {
@@ -41,11 +41,11 @@ const SignIn = (props) => {
         event.preventDefault();
     
         try {
-          const { data } = await loginUser({
+          const { data } = await login({
             variables: { ...formState },
           });
     
-          Auth.loginUser(data.login.token);
+          Auth.login(data.login.token);
         } catch (e) {
           console.error(e);
         }
@@ -59,7 +59,7 @@ const SignIn = (props) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container id="login-container" component="main" maxWidth="xs">
+      <Container id="login-container" component="main" maxWidth="xs" onSubmit={handleSubmit}>
         <CssBaseline />
         <Box
           sx={{
@@ -77,7 +77,7 @@ const SignIn = (props) => {
           </Typography> */}
           <Box
             component="form"
-            onSubmit={handleSubmit}
+            
             noValidate
             sx={{ mt: 1 }}
           >

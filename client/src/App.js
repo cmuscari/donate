@@ -59,39 +59,26 @@ app.post('/donate', cors(), async (req, response) =>{
 
 
 function App() {
-  return ( 
+  return (
     <ApolloProvider client={client}>
-    <Router>
-      <div className="">
-        <Header />
+      <Router>
         <div className="">
-          <Routes>
-            <Route
-              path="/"
-              element={<Album />}
-            />
-            <Route
-              path="/login"
-              element={<Login />}
-            />
-            <Route
-              path="/signup"
-              element={<SignUpPage />}
-            />
-            <Route
-              path="/post"
-              element={<OrgForm />}
-            />
-            <Route
-              path="/organization/:id"
-              element={<SingleOrg/>}
-              />
-          </Routes>
+          <div className="-footer">
+            <Header />
+            <div className="">
+              <Routes>
+                <Route path="/" element={<Album />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<SignUpPage />} />
+                <Route path="/post" element={<OrgForm />} />
+                <Route path="/organization/:id" element={<SingleOrg />} />
+              </Routes>
+            </div>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </Router>
-  </ApolloProvider>
+      </Router>
+    </ApolloProvider>
   );
 
 }
