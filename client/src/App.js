@@ -1,6 +1,7 @@
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { StoreProvider } from './utils/globalstate';
 
 import Login from './pages/Login';
 import Album from './components/Homepage'
@@ -22,6 +23,7 @@ const client = new ApolloClient({
 function App() {
   return ( 
     <ApolloProvider client={client}>
+    <StoreProvider>
     <Router>
       <div className="">
         <Header />
@@ -52,6 +54,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </StoreProvider>
   </ApolloProvider>
   );
 }

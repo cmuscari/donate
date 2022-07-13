@@ -29,3 +29,18 @@ export const QUERY_POSTS_BY_CATEGORY = gql`
     }
   }
 `;
+
+export const QUERY_ORG = gql`
+query postsByCategory($category: String!) {
+  postsByCategory(category: $category) {
+      _id
+      category
+      orgName
+      website
+      location
+      description
+      createdAt
+      username
+  }
+}
+`;

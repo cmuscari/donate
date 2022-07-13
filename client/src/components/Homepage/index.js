@@ -14,27 +14,41 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {useNavigate} from 'react-router-dom';
 import Auth from '../../utils/auth';
 import BasicSelect from '../Select';
+import { Category } from '@material-ui/icons';
+import { useQuery } from '@apollo/client';
+import { useStoreContext } from '../../utils/globalstate';
 
-// const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const theme = createTheme();
 
 export default function Album() {
-
-    const { loading, data } = useQuery(QUERY_POSTS);
-    const { data } = useQuery(QUERY_POSTS_BY_CATEGORY);
-    const posts = data?.posts || [];
+    const { category } = useStoreContext();
   
-    const loggedIn = Auth.loggedIn();
 
-  // const navigate = useNavigate();
-  // const navigateToNewPost = () => {
-  //   navigate('/post');
-  // }
+    // if (category === 'all'){
+    //   const { loading, data } = useQuery(QUERY_POSTS);
+    //   const { data } = useQuery(QUERY_POSTS_BY_CATEGORY);
+   
+
+    // } else {
+    //   const { loading, data } = useQuery(QUERY_POSTS_BY_CATEGORY, {
+    //     variables: {category: category}
+
+    //   })
+    // }
+ 
+    // const posts = data?.posts || [];
+
+  const navigate = useNavigate();
+  const navigateToNewPost = () => {
+    navigate('/post');
+  }
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+    
       <main>
         {/* Hero unit */}
         <Box
@@ -65,7 +79,9 @@ export default function Album() {
               justifyContent="center"
             >
               {/* <Button variant="contained">Filter Results</Button> */}
+             
               <BasicSelect />
+              <div>{category}</div>
               {Auth.loggedIn() ? (<>
               <Button variant="outlined" onClick={navigateToNewPost}>Post a New Organization</Button>
               </>) : (

@@ -4,13 +4,18 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { useStoreContext } from '../../utils/globalstate';
+
 
 export default function BasicSelect() {
-  const [category, setCategory] = React.useState('');
+  const [category, setCategory] = React.useState('all');
+
+  const { newCategory } = useStoreContext();
 
   const handleChange = (event) => {
     setCategory(event.target.value);
     console.log(event.target.value);
+    newCategory(category);
   };
 
   return (
@@ -24,10 +29,10 @@ export default function BasicSelect() {
           label="Category"
           onChange={handleChange}
         >
-          <MenuItem value={0}>None</MenuItem>
-          <MenuItem value={1}>Health</MenuItem>
-          <MenuItem value={2}>Children</MenuItem>
-          <MenuItem value={3}>Education</MenuItem>
+          <MenuItem value={'all'}>[All]</MenuItem>
+          <MenuItem value={'health'}>Health</MenuItem>
+          <MenuItem value={'children'}>Children</MenuItem>
+          <MenuItem value={'education'}>Education</MenuItem>
         </Select>
       </FormControl>
     </Box>
