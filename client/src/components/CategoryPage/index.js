@@ -36,7 +36,7 @@ export default function Album() {
   const { category } = useStoreContext();
 
 
-  const { loading, data } = useQuery(QUERY_ORGS);
+  const { loading, data } = useQuery(QUERY_POSTS_BY_CATEGORY);
   const posts = data?.posts || [];
 
   // console.log(posts)
