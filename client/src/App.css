@@ -29,6 +29,7 @@
   text-align: center;
   justify-content: center;
 }
+
 .nav-links {
   font-family: 'Montserrat', sans-serif;
   color: #153741;
@@ -54,6 +55,79 @@
 .subtitle-text {
   margin-top: 5px;
 }
+
+.orgCard {
+  padding-top: 25px;
+  padding-bottom: 60px;
+  padding-left: 60px;
+  padding-right: 60px;
+  border-radius: 12px;
+  margin: auto;
+  max-width: 40%;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  color: black;
+  margin-bottom: 150px;
+  background-color: #f1f2f2;
+  border: 1px solid darkgrey;
+}
+
+.single-org-icon {
+  height: 75px;
+  width: auto;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.category-name {
+  text-transform: uppercase;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  color: #153741;
+  font-size: 25px;
+  margin-top: 5px;
+}
+
+.single-org-item-container {
+  margin: 7px;
+}
+
+.single-org-title {
+  font-size: 20px;
+  margin-bottom: 7px;
+}
+
+.single-org-item {
+  font-size: 25px;
+  margin-top: 0px;
+}
+
+.website-link:hover {
+  color: #2b7685;
+}
+
+#donate-btn {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  background-color: #153741;
+  font-size: 18px;
+  border: none;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+
+#donate-btn:hover {
+  transform: scale(1.03);
+  transition: all 0.30s ease-in-out;
+  background-color: #2b7685;
+}
+
 
 
 
@@ -93,6 +167,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
