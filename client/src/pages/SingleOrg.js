@@ -28,11 +28,11 @@ const SingleOrg = (props) => {
     const getIcon = () => {
         if (`${post.category}` === 'animals') {
             return Icons.animals;
-        } else if (`${post.category}` === "arts") {
+        } else if (`${post.category}` === "art-culture") {
             return Icons.arts;
         } else if (`${post.category}` === "children") {
             return Icons.children;
-        } else if (`${post.category}` === "civil-rights") {
+        } else if (`${post.category}` === "human-civil") {
             return Icons.civilrights;
         } else if (`${post.category}` === "education") {
             return Icons.education;
@@ -40,7 +40,7 @@ const SingleOrg = (props) => {
             return Icons.environmental;
         } else if (`${post.category}` === "health") {
             return Icons.health;
-        } else if (`${post.category}` === "humanitarian") {
+        } else if (`${post.category}` === "human-community") {
             return Icons.humanitarian;
         } else if (`${post.category}` === "international") {
             return Icons.international;
@@ -50,12 +50,44 @@ const SingleOrg = (props) => {
     };
     let categoryIcon = getIcon();
 
+
+     // render category name based on selected category
+     const getCatName = () => {
+        if (`${post.category}` === 'animals') {
+            return 'ANIMALS';
+        } else if (`${post.category}` === "art-culture") {
+            return 'ARTS & CULTURE';
+        } else if (`${post.category}` === "children") {
+            return 'CHILDREN';
+        } else if (`${post.category}` === "human-civil") {
+            return 'HUMAN & CIVIL RIGHTS';
+        } else if (`${post.category}` === "education") {
+            return 'EDUCATION';
+        } else if (`${post.category}` === "environmental") {
+            return 'ENVIRONMENTAL';
+        } else if (`${post.category}` === "health") {
+            return 'HEALTH';
+        } else if (`${post.category}` === "human-community") {
+            return 'HUMANITARIAN & COMMUNITY';
+        } else if (`${post.category}` === "international") {
+            return 'INTERNATIONAL';
+        } else {
+            return 'PUBLIC SERVICE & MILITARY';
+        }
+    };
+    let catName = getCatName();
+
+
+    
+
+
+
     return (
         <div>
             <div className="orgCard">
                 <img id="icon" className="single-org-icon" src={categoryIcon} />
                 <div>
-                    <p className="category-name"><strong>{post.category}</strong></p>
+                    <p className="category-name"><strong>{catName}</strong></p>
                 </div>
                 <div className="single-org-item-container">
                     <p className='single-org-title'><strong>Organization Name:</strong></p>
