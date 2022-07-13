@@ -39,22 +39,6 @@ export default function Album() {
 
 
 
-
-  // // render category icon based on selected category name
-  // const getIcon = () => {
-  //   if (`${posts.category}` === 'children') {
-  //     return '../images/icons/children.png';
-  //   } else {
-  //     return '../images/icons/animals.png';
-  //   }
-  // };
-
-  // let categoryIcon = getIcon();
-
-
-
-
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

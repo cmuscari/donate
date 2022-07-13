@@ -92,17 +92,14 @@ const OrgForm = () => {
                     <input onChange={inputChange} type="text" id="org-web" name="website" className="pinput" value={textInfo.website}></input>
                 </div>
                 <div>
-                    <label htmlFor="loc" id="loc" name="loc">Description2:</label>
+                    <label htmlFor="loc" id="loc" name="loc">Description:</label>
                     <input onChange={inputChange} type="text" id="org-loc" name="description" className="pinput" value={textInfo.description}></input>
                 </div>
                 <div>
                     <label htmlFor="loc" id="loc" name="loc">Location (city, state):</label>
                     <input onChange={inputChange} type="text" id="org-loc" name="location" className="pinput" value={textInfo.location}></input>
                 </div>
-                <div>
-                    <label htmlFor="desc" id="desc" name="desc">Description:</label>
-                    <input onChange={inputChange} type="text" id="org-desc" name="description" className="pinput" value={textInfo.description}></input>
-                </div>
+            
                 <div className="post-btn-container">
                     <button type="submit" name="submit-button" className="post-btn">
                         SUBMIT
