@@ -93,7 +93,7 @@ export default function Album() {
                     <Card id="org-container"
                       sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                     >
-                      <CardContent className="container-content" sx={{ flexGrow: 1 }}>
+                      <CardContent className="container-content" sx={{ flexGrow:1 }}>
                         <img className="category-icon" src={testCategoryIcon} />
                         <Typography gutterBottom variant="h5" component="h2" id="org-card-name" className="org-name">
                           {post.orgName}
