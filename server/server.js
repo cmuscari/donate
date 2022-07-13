@@ -5,8 +5,9 @@ const { ApolloServer } = require('apollo-server-express');
 //import our typeDefs and resolvers
 const{ typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
+require('dotenv').config();
 const db = require('./config/connection');
-const stripe = require('stripe');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST);
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { application } = require('express');
@@ -35,7 +36,7 @@ app.post('/donate', cors(), async (req, response) =>{
         const payment = await stripe.paymentIntents.create({
             amount,
             currency: "USD",
-            description: "Donation to online charity board",
+            description: "Donation to online charity board, 'Donate'",
             payment_method: id,
             confirm: true
         })

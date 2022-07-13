@@ -45,7 +45,7 @@ export default function PaymentForm() {
             const {id} = paymentMethod
             // first argument is link to donate on site
             // second argument is the amount of the payment
-            const response = await axios.post("http://localhost:4000/donate",{
+            const response = await axios.post("http://localhost:3001/donate",{
                 amount: 500,
                 id
             })
@@ -70,7 +70,7 @@ export default function PaymentForm() {
             <CardElement options={CARD_OPTIONS}/>
             </div>
         </fieldset>
-        <button>Pay</button>
+        <button>Donate</button>
     </form>
     :
     <div>
