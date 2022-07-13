@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 import { QUERY_ORGS } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
 import Select from '../Select';
-import { QUERY_POSTS_BY_CATEGORY } from '../../utils/queries';
+import { QUERY_CATEGORY } from '../../utils/queries';
 import { useStoreContext } from '../../utils/globalstate';
 
 
@@ -27,7 +27,7 @@ const theme = createTheme();
 
 
 
-export default function Album() {
+export default function CategoryPage() {
 
   const navigate = useNavigate();
   const navigateToNewPost = () => {
@@ -36,7 +36,10 @@ export default function Album() {
   const { category } = useStoreContext();
 
 
-  const { loading, data } = useQuery(QUERY_POSTS_BY_CATEGORY);
+  const { loading, data } = useQuery(QUERY_CATEGORY, {
+        variables: {category: category}
+          
+      })
   const posts = data?.posts || [];
 
   // console.log(posts)
@@ -88,6 +91,7 @@ export default function Album() {
             </Stack>
           </Container>
         </Box>
+        <div>This is the CategoryPage!</div>
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
