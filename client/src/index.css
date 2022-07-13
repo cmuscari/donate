@@ -183,3 +183,18 @@ a:active {
   transition: all 0.30s ease-in-out;
   background-color: #2b7685;
 }
+
+.orgCard{
+  border: 2px solid black;
+
+  /* Add space between the border and the content */
+  padding: 8px 8px;
+
+  border-radius: 12px;
+
+  margin: auto;
+
+  max-width: 60%;
+
+
+}
