@@ -1,11 +1,72 @@
-.App {
-  text-align: center;
+.header-container {
+  top: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 275px;
+  width: 100%;
+  background-image: url("./images/header/header-image2.jpg");
+  background-size: cover;
+  background-position: 50%;
+  background-size: 125%;
+  opacity: .9;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-text {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 115px;
+  line-height: .95;
+  text-align: center;
+  letter-spacing: 25px;
 }
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
+.nav-links {
+  font-family: 'Montserrat', sans-serif;
+  color: #153741;
+  font-size: 25px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+.nav-links:hover {
+  transition: all 0.35s ease-in-out;
+  color: #2b7685;
+}
+
+.header-subtitle {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.subtitle-text {
+  margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

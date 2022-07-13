@@ -23,6 +23,7 @@
   "homepage": "https://github.com/cmuscari/donate#readme",
   "dependencies": {
     "@apollo/client": "^3.6.9",
+    "@material-ui/icons": "^4.11.3",
     "apollo-server-express": "^3.9.0",
     "graphql": "^16.5.0",
     "jsonwebtoken": "^8.5.1",
