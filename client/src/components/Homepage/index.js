@@ -69,7 +69,7 @@ export default function Album() {
             pb: 2,
           }}
         >
-          <Container maxWidth="md">
+          <Container maxWidth="lg">
             <Stack
               direction="column"
               spacing={2}
@@ -84,12 +84,12 @@ export default function Album() {
             </Stack>
           </Container>
         </Box>
-        <Container sx={{ py: 8 }} maxWidth="md">
+        <Container sx={{ py: 8 }} maxWidth="lg">
           {/* End hero unit */}
           <Grid container spacing={4}>
             {posts &&
               posts.map((post) => (
-                <Grid item key={post._id} xs={12} sm={6} md={4}>
+                <Grid item key={post._id} xs={12} sm={6} md={4} lg={3}>
                   <Link to={`/organization/${post._id}`}>
                     <Card id="org-container"
                       sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}

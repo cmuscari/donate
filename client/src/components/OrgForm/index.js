@@ -65,6 +65,7 @@ const OrgForm = () => {
 
         } catch (e) {
             console.error(e);
+            alert(`Category is required!`)
         }
     };
 
@@ -85,6 +86,7 @@ const OrgForm = () => {
                     <h2 className="newpost-head">Let others know what YOU care about.<br></br>Share an organization here!</h2>
                     <label htmlFor="category">Select a Category:</label>
                     <select onChange={inputChange} id="category" name="category" className='pselect' value={textInfo.category}>
+                        <option value="select">Please Select a Category:</option>
                         <option value="animals">Animals</option>
                         <option value="art-culture">Arts & Culture</option>
                         <option value="children">Children</option>
