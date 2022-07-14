@@ -110,23 +110,22 @@
 .website-link:hover {
   color: #2b7685;
 }
+
 /* donation form styling */
 #donate-btn {
-  display: block;
-  font-size: 16px;
-  width: calc(100% - 30px);
-  height: 40px;
-  margin: 40px 15px 0;
+  font-family: "Montserrat", sans-serif;
+  color: white;
   background-color: #153741;
-  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 white;
-  border-radius: 4px;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 100ms ease-in-out;
-  will-change: transform, background-color, box-shadow;
+  font-size: 18px;
   border: none;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+
+.heart-text {
+  font-size: 25px;
 }
 
 #donate-btn:hover {
@@ -149,7 +148,7 @@
   margin-right: auto;
   padding: 0;
   border-style: none;
-  background-color:#2b7685;
+  background-color: #2b7685;
   ;
   will-change: opacity, transform;
   box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),

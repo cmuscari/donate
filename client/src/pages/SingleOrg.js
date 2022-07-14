@@ -96,7 +96,7 @@ const SingleOrg = (props) => {
                     <p className='single-org-item'>{post.username}</p>
                 </div>
                 <a href={'/donate'} target='_blank'>
-                    <button type="submit" id="donate-btn">DONATE NOW</button>
+                    <button type="submit" id="donate-btn"><span className="heart-text">♡</span><br></br>DONATE NOW</button>
                 </a>
             </div>
             <div className="comments-section">
