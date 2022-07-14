@@ -77,10 +77,6 @@ const SingleOrg = (props) => {
     let catName = getCatName();
 
 
-    console.log(post.description);
-    console.log(post.location);
-
-
 
     return (
         <div>

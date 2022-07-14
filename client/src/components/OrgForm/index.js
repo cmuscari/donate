@@ -21,6 +21,8 @@ const OrgForm = () => {
         // }
     );
 
+    let successMessage = '';
+
 
     const [textInfo, setTextInfo] = useState({
         category: "",
@@ -37,19 +39,30 @@ const OrgForm = () => {
 
         try {
             // add post to database
-            const {data} = await addPost({
+            const { data } = await addPost({
                 variables: { ...textInfo }
             });
-
+            
             // clear form value
             setTextInfo({
                 category: "",
                 orgName: "",
                 location: "",
                 website: "",
+
                 description: "",
                 username: "",
             });
+
+            // display success message
+            alert(`Your organization, ${textInfo.orgName}, was posted successfully!  Thank you!`);
+
+            // refresh browser
+            document.location.reload();
+
+            // redirect to homepage
+            window.location.replace("/");
+
         } catch (e) {
             console.error(e);
         }
@@ -62,6 +75,7 @@ const OrgForm = () => {
         setTextInfo({ ...textInfo, [name]: value })
         // console.log(textInfo);
     }
+
 
 
     return (
@@ -92,20 +106,22 @@ const OrgForm = () => {
                     <input onChange={inputChange} type="text" id="org-web" name="website" className="pinput" value={textInfo.website}></input>
                 </div>
                 <div>
-                    <label htmlFor="loc" id="loc" name="loc">Description:</label>
-                    <input onChange={inputChange} type="text" id="org-loc" name="description" className="pinput" value={textInfo.description}></input>
-                </div>
-                <div>
                     <label htmlFor="loc" id="loc" name="loc">Location (city, state):</label>
                     <input onChange={inputChange} type="text" id="org-loc" name="location" className="pinput" value={textInfo.location}></input>
                 </div>
-            
+                <div>
+                    <label htmlFor="desc" id="desc" name="desc">Description:</label>
+                    <textarea onChange={inputChange} type="text" id="org-desc" name="description" className="pinput" value={textInfo.description}></textarea>
+                </div>
                 <div className="post-btn-container">
                     <button type="submit" name="submit-button" className="post-btn">
                         SUBMIT
                     </button>
                 </div>
             </form>
+
+
+
         </div>
     )
 };
