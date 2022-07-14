@@ -84,6 +84,7 @@ export default function CategoryPage() {
               spacing={2}
               justifyContent="center"
             >
+              <Select/>
               {/* <Button id="filter-button" variant="contained">Search by Category</Button> */}
               {Auth.loggedIn() ? (<>
                 <Button id="new-post-button" variant="outlined" onClick={navigateToNewPost}>Post a New Organization</Button>

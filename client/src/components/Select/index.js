@@ -34,11 +34,12 @@ export default function BasicSelect() {
           <MenuItem value={'health'}>Health</MenuItem>
           <MenuItem value={'children'}>Children</MenuItem>
           <MenuItem value={'education'}>Education</MenuItem>
-          <MenuItem value={'human & civil rights'}>Human And Civil Rights</MenuItem>
-          <MenuItem value={'arts & culture'}>Arts and Culture</MenuItem>
-          <MenuItem value={'public service & military'}>Public service and military</MenuItem>
+          <MenuItem value={'human-civil'}>Human And Civil Rights</MenuItem>
+          <MenuItem value={'art-culture'}>Arts and Culture</MenuItem>
+          <MenuItem value={'public-military'}>Public service and military</MenuItem>
           <MenuItem value={'animals'}>Animals</MenuItem>
           <MenuItem value={'international'}>International</MenuItem>
+          <MenuItem value={'environmental'}>Environmental</MenuItem>
         </Select>
       </FormControl>
     </Box>
