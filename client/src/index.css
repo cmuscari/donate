@@ -181,6 +181,13 @@ a:active {
   justify-content: center;
 }
 
+a.nav-links {
+  background-color: #153741;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 .post-btn {
   font-family: 'Montserrat', sans-serif;
   color: white;
