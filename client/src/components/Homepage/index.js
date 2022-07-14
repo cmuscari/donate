@@ -35,7 +35,25 @@ export default function Album() {
   const { loading, data } = useQuery(QUERY_ORGS);
   const posts = data?.posts || [];
 
-  // console.log(posts)
+  console.log(posts[0])
+
+
+
+
+  // render category icon based on selected category name
+  const getIcon = (category) => {
+    console.log("category", category);
+    var categoryList = Object.keys(Icons).filter(key => category.includes(key)) 
+    if (categoryList.length === 0) {
+      return "";
+    };
+    return Icons[categoryList[0]];
+  };
+  console.log(posts[0]);
+  // let categoryIcon = getIcon(posts[0].category);
+
+  // console.log(categoryIcon);
+
 
 
 
@@ -77,7 +95,7 @@ export default function Album() {
                       sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                     >
                       <CardContent className="container-content" sx={{ flexGrow: 1 }}>
-                        <img className="category-icon" src={Icons.arts} />
+                        <img className="category-icon" src={getIcon(post.category)} alt="" />
                         <Typography gutterBottom variant="h5" component="h2" id="org-card-name" className="org-name">
                           {post.orgName}
                         </Typography>
