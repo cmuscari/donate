@@ -26,34 +26,22 @@ const SingleOrg = (props) => {
 
     // render category icon based on selected category name
     const getIcon = () => {
-        if (`${post.category}` === 'animals') {
-            return Icons.animals;
-        } else if (`${post.category}` === "arts") {
-            return Icons.arts;
-        } else if (`${post.category}` === "children") {
-            return Icons.children;
-        } else if (`${post.category}` === "civil-rights") {
-            return Icons.civilrights;
-        } else if (`${post.category}` === "education") {
-            return Icons.education;
-        } else if (`${post.category}` === "environmental") {
-            return Icons.environmental;
-        } else if (`${post.category}` === "health") {
-            return Icons.health;
-        } else if (`${post.category}` === "humanitarian") {
-            return Icons.humanitarian;
-        } else if (`${post.category}` === "international") {
-            return Icons.international;
-        } else {
-            return Icons.military;
-        }
+      
+      var categoryList = Object.keys(Icons).filter((key) =>
+        post.category.includes(key)
+      );
+      if (categoryList.length === 0) {
+        return "";
+      }
+      return Icons[categoryList[0]];
     };
+
     let categoryIcon = getIcon();
 
     return (
         <div>
             <div className="orgCard">
-                <img id="icon" className="single-org-icon" src={categoryIcon} />
+                <img id="icon" className="single-org-icon" src={categoryIcon} alt="" />
                 <div>
                     <p className="category-name"><strong>{post.category}</strong></p>
                 </div>
