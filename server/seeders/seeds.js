@@ -65,13 +65,13 @@ db.once("open", async () => {
       username: "Malory",
     },
     {
-      category: "health",
-      orgName: "National Multiple Sclerosis Society",
-      website: "http://www.nationalmssociety.org",
-      location: "New York, New York",
+      category: "human-civil",
+      orgName: "Urban League of Greater Pittsburgh",
+      website: "https://ulpgh.org/",
+      location: "Pittsburgh, Pennsylvania",
       description:
-        "The National Multiple Sclerosis Society (NMSS) is a voluntary, non-profit, health organization dedicated to ending the devastating effects of MS by advancing the cure, prevention and treatment of multiple sclerosis and by improving the lives of affected individuals.",
-      username: "Archer",
+        "The Mission of the Urban League of Greater Pittsburgh is to enable African Americans to secure economic self-reliance, parity and power, and civil rights.",
+      username: "Krieger",
     },
     {
       category: "children",
@@ -101,13 +101,13 @@ db.once("open", async () => {
       username: "Lana",
     },
     {
-      category: "human-civil",
-      orgName: "Urban League of Greater Pittsburgh",
-      website: "https://ulpgh.org/",
-      location: "Pittsburgh, Pennsylvania",
+      category: "health",
+      orgName: "National Multiple Sclerosis Society",
+      website: "http://www.nationalmssociety.org",
+      location: "New York, New York",
       description:
-        "The Mission of the Urban League of Greater Pittsburgh is to enable African Americans to secure economic self-reliance, parity and power, and civil rights.",
-      username: "Krieger",
+        "The National Multiple Sclerosis Society (NMSS) is a voluntary, non-profit, health organization dedicated to ending the devastating effects of MS by advancing the cure, prevention and treatment of multiple sclerosis and by improving the lives of affected individuals.",
+      username: "Archer",
     },
     {
       category: "art-culture",
@@ -117,6 +117,33 @@ db.once("open", async () => {
       description:
         "TACA believes in the transformative power of the arts. We exist to nurture arts organizations and provide visionary and responsive leadership to the arts community.",
       username: "Len",
+    },
+    {
+      category: "international",
+      orgName: "International Rescue Committee",
+      website: "https://www.rescue.org/",
+      location: "New York, New York",
+      description:
+        "The International Rescue Committee (IRC) helps people affected by humanitarian crises—including the climate crisis—to survive, recover and rebuild their lives.",
+      username: "Lana",
+    },
+    {
+      category: "environmental",
+      orgName: "The Ocean Cleanup",
+      website: "https://theoceancleanup.com/",
+      location: "New York, New York",
+      description:
+        "The Ocean Cleanup's team consists of 120 engineers, researchers, scientists, computational modelers, and supporting roles, working daily to rid the world's oceans of plastic.",
+      username: "Barry",
+    },
+    {
+      category: "animals",
+      orgName: "The Animal Foundation",
+      website: "https://animalfoundation.com/",
+      location: "Las Vegas, Nevada",
+      description:
+        "The Animal Foundation of Las Vegas, founded in 1978 as a low-cost spay and neuter clinic, is one of the highest volume single-site animal shelters in America.",
+      username: "Pam",
     },
     {
       category: "public-military",
