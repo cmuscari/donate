@@ -11,14 +11,14 @@
   background-size: cover;
   background-position: 50%;
   background-size: 125%;
-  opacity: .9;
+  opacity: 0.9;
 }
 
 .header-text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: white;
   font-size: 115px;
-  line-height: .95;
+  line-height: 0.95;
   text-align: center;
   letter-spacing: 25px;
 }
@@ -31,7 +31,7 @@
 }
 
 .nav-links {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #153741;
   font-size: 25px;
   margin-left: 30px;
@@ -45,7 +45,7 @@
 }
 
 .header-subtitle {
-  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
   text-align: center;
   font-size: 18px;
   font-style: italic;
@@ -69,7 +69,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
   color: black;
   margin-bottom: 40px;
   background-color: #f1f2f2;
@@ -86,7 +86,7 @@
 
 .category-name {
   text-transform: uppercase;
-  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
   color: #153741;
   font-size: 25px;
   margin-top: 5px;
@@ -96,7 +96,8 @@
   margin: 7px;
 }
 
-.single-org-title, .comments-title {
+.single-org-title,
+.comments-title {
   font-size: 20px;
   margin-bottom: 7px;
 }
@@ -109,23 +110,87 @@
 .website-link:hover {
   color: #2b7685;
 }
-
+/* donation form styling */
 #donate-btn {
-  font-family: 'Montserrat', sans-serif;
-  color: white;
+  display: block;
+  font-size: 16px;
+  width: calc(100% - 30px);
+  height: 40px;
+  margin: 40px 15px 0;
   background-color: #153741;
-  font-size: 18px;
+  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 #ffb9f6;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+  will-change: transform, background-color, box-shadow;
   border: none;
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 20px;
 }
 
 #donate-btn:hover {
   transform: scale(1.03);
-  transition: all 0.30s ease-in-out;
+  transition: all 0.3s ease-in-out;
   background-color: #2b7685;
+}
+#donate-btn:active {
+  background-color: #3491ad;
+  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 #e298d8;
+  transform: scale(0.99);
+}
+.FormGroup {
+  margin: 0 15px 20px;
+  padding: 0;
+  border-style: none;
+  background-color: #7795f8;
+  will-change: opacity, transform;
+  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 #829fff;
+  border-radius: 4px;
+}
+
+.FormRow {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 15px;
+  border-top: 1px solid #819efc;
+}
+
+.StripeElement--webkit-autofill {
+  background: transparent !important;
+}
+
+.StripeElement {
+  width: 100%;
+  padding: 11px 15px 11px 0;
+}
+
+.payment-btn {
+  display: block;
+  font-size: 16px;
+  width: calc(100% - 30px);
+  height: 40px;
+  margin: 40px 15px 0;
+  background-color: #153741;
+  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 #ffb9f6;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+  will-change: transform, background-color, box-shadow;
+  border: none;
+}
+.payment-btn:active {
+  background-color: #3491ad;
+  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 #e298d8;
+  transform: scale(0.99);
 }
 
 .comments-section {
@@ -140,7 +205,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
   color: black;
   margin-bottom: 150px;
   background-color: #f1f2f2;
@@ -158,7 +223,7 @@
 }
 
 #comments-btn {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: white;
   background-color: #153741;
   font-size: 18px;
@@ -171,26 +236,13 @@
 
 #comments-btn:hover {
   transform: scale(1.03);
-  transition: all 0.30s ease-in-out;
+  transition: all 0.3s ease-in-out;
   background-color: #2b7685;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* RESPONSIVE */
 
 @media screen and (max-width: 550px) {
-
   .header-container {
     height: 225px;
   }
@@ -204,20 +256,12 @@
     margin-right: 20px;
     margin-top: 10px;
   }
-  
+
   .header-subtitle {
     font-size: 13px;
     margin-bottom: 20px;
   }
-
-
-
-
-
 }
-
-
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

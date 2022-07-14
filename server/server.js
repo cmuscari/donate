@@ -5,7 +5,12 @@ const { ApolloServer } = require('apollo-server-express');
 //import our typeDefs and resolvers
 const{ typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
+require('dotenv').config();
 const db = require('./config/connection');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST);
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const { application } = require('express');
 
 const PORT = process.env.PORT || 3001;
 // create a new Apollo server and pass in our schema data
@@ -17,8 +22,38 @@ const server = new ApolloServer({
 
 const app = express();
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use(cors());
+
+//TODO: Fix bodyParser calls and move function if necessary
+app.post('/donate', cors(), async (req, response) =>{
+    let { amount, id } = req.body
+
+    try {
+        // async function straight from stripe api to get payment info/object
+        const payment = await stripe.paymentIntents.create({
+            amount,
+            currency: "USD",
+            description: "Donation to online charity board, 'Donate'",
+            payment_method: id,
+            confirm: true
+        })
+        console.log("Payment", payment)
+        response.json({
+            message: "Payment successful",
+            success: true
+        })
+    } catch (error) {
+        console.log("Error", error)
+        response.json({
+            message: "Payment failed",
+            success: false
+        })
+    }
+});
+
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {

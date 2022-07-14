@@ -4,12 +4,15 @@ import { QUERY_ORG } from '../utils/queries';
 import { useParams } from 'react-router-dom';
 import React from 'react';
 import { ContactsOutlined } from '@material-ui/icons';
+import { useState } from 'react';
 import Icons from '../components/Icons'
 
 
 
 
 const SingleOrg = (props) => {
+    const [showItem, setShowItem] = useState(false)
+
     const { id: orgId } = useParams();
 
     const { loading, data } = useQuery(QUERY_ORG, {
@@ -65,7 +68,6 @@ const SingleOrg = (props) => {
     let catName = getCatName();
 
 
-
     return (
         <div>
             <div className="orgCard">
@@ -93,7 +95,7 @@ const SingleOrg = (props) => {
                     <p className='single-org-title'><strong>Shared by:</strong></p>
                     <p className='single-org-item'>{post.username}</p>
                 </div>
-                <a href={`${post.website}`} target='_blank'>
+                <a href={'/donate'} target='_blank'>
                     <button type="submit" id="donate-btn">DONATE NOW</button>
                 </a>
             </div>
