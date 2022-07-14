@@ -34,15 +34,17 @@ export default function CategoryPage() {
     navigate('/post');
   }
   const { category } = useStoreContext();
+  console.log(category);
 
 
-  const { loading, data } = useQuery(QUERY_CATEGORY, {
-        variables: {category: category}
+  const { data } = useQuery(QUERY_CATEGORY, {
+        variables: {category}
           
       })
-  const posts = data?.posts || [];
+      console.log(data);
+      const posts = data?.postsByCategory || [];
 
-  // console.log(posts)
+  console.log(posts)
 
 
 
@@ -91,7 +93,7 @@ export default function CategoryPage() {
             </Stack>
           </Container>
         </Box>
-        <div>This is the CategoryPage!</div>
+
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>

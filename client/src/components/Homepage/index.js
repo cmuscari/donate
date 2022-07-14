@@ -39,7 +39,7 @@ export default function Album() {
   const { loading, data } = useQuery(QUERY_ORGS);
   const posts = data?.posts || [];
 
-  // console.log(posts)
+  console.log(posts)
 
 
 
