@@ -13,12 +13,14 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import Auth from '../../utils/auth';
-import Icons from '../Icons'
+import testCategoryIcon from '../../images/icons/animals.png';
 import { Link } from 'react-router-dom';
 import { QUERY_ORGS } from '../../utils/queries';
+import Icons from '../Icons'
 import { useQuery } from '@apollo/client';
+
 import Select from '../Select';
-import { QUERY_POSTS_BY_CATEGORY } from '../../utils/queries';
+import { QUERY_CATEGORY } from '../../utils/queries';
 import { useStoreContext } from '../../utils/globalstate';
 
 
@@ -27,19 +29,23 @@ const theme = createTheme();
 
 
 
-export default function Album() {
+export default function CategoryPage() {
 
   const navigate = useNavigate();
   const navigateToNewPost = () => {
     navigate('/post');
   }
   const { category } = useStoreContext();
+  console.log(category);
 
 
-  const { loading, data } = useQuery(QUERY_ORGS);
-  const posts = data?.posts || [];
+  const { data } = useQuery(QUERY_CATEGORY, {
+        variables: {category}
+          
+      })
+      console.log(data);
+      const posts = data?.postsByCategory || [];
 
-  console.log(posts[0])
   console.log(posts)
 
 
@@ -55,9 +61,7 @@ export default function Album() {
     return Icons[categoryList[0]];
   };
   console.log(posts[0]);
-  // let categoryIcon = getIcon(posts[0].category);
 
-  // console.log(categoryIcon);
 
 
 
@@ -74,13 +78,12 @@ export default function Album() {
             pb: 2,
           }}
         >
-          <Container maxWidth="xl">
+          <Container maxWidth="lg">
             <Stack
               direction="column"
               spacing={2}
               justifyContent="center"
             >
-              <Select/>
               {/* <Button id="filter-button" variant="contained">Search by Category</Button> */}
               {Auth.loggedIn() ? (<>
                 <Button id="new-post-button" variant="outlined" onClick={navigateToNewPost}>Post a New Organization</Button>
@@ -90,7 +93,7 @@ export default function Album() {
             </Stack>
           </Container>
         </Box>
-        <Container sx={{ py: 8 }} maxWidth="xl">
+        <Container sx={{ py: 8 }} maxWidth="lg">
           {/* End hero unit */}
           <Grid container spacing={4}>
             {posts &&
