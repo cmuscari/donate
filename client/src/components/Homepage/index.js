@@ -69,7 +69,7 @@ export default function Album() {
             pb: 2,
           }}
         >
-          <Container maxWidth="lg">
+          <Container maxWidth="xl">
             <Stack
               direction="column"
               spacing={2}
@@ -84,7 +84,7 @@ export default function Album() {
             </Stack>
           </Container>
         </Box>
-        <Container sx={{ py: 8 }} maxWidth="lg">
+        <Container sx={{ py: 8 }} maxWidth="xl">
           {/* End hero unit */}
           <Grid container spacing={4}>
             {posts &&

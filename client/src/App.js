@@ -43,7 +43,7 @@ function App() {
         <div className="">
           <div className="-footer">
             <Header />
-            <div className="">
+            <div className="content">
               <Routes>
                 <Route path="/" element={<Album />} />
                 <Route path="/login" element={<Login />} />
