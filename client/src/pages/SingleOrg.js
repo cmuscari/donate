@@ -3,10 +3,9 @@ import { useQuery } from '@apollo/client';
 import { QUERY_ORG } from '../utils/queries';
 import { useParams } from 'react-router-dom';
 import React from 'react';
-import childrenIcon from '../images/icons/children.png';
-import animalsIcon from '../images/icons/animals.png';
 import { ContactsOutlined } from '@material-ui/icons';
 import { useState } from 'react';
+import Icons from '../components/Icons'
 
 
 
@@ -29,24 +28,52 @@ const SingleOrg = (props) => {
 
     // render category icon based on selected category name
     const getIcon = () => {
-        if (`${post.category}` === 'children') {
-            return { childrenIcon };
-        } else {
-            return { animalsIcon };
-        }
+      
+      var categoryList = Object.keys(Icons).filter((key) =>
+        post.category.includes(key)
+      );
+      if (categoryList.length === 0) {
+        return "";
+      }
+      return Icons[categoryList[0]];
     };
 
     let categoryIcon = getIcon();
 
-    console.log(categoryIcon);
+
+     // render category name based on selected category
+     const getCatName = () => {
+        if (`${post.category}` === 'animals') {
+            return 'ANIMALS';
+        } else if (`${post.category}` === "art-culture") {
+            return 'ARTS & CULTURE';
+        } else if (`${post.category}` === "children") {
+            return 'CHILDREN';
+        } else if (`${post.category}` === "human-civil") {
+            return 'HUMAN & CIVIL RIGHTS';
+        } else if (`${post.category}` === "education") {
+            return 'EDUCATION';
+        } else if (`${post.category}` === "environmental") {
+            return 'ENVIRONMENTAL';
+        } else if (`${post.category}` === "health") {
+            return 'HEALTH';
+        } else if (`${post.category}` === "human-community") {
+            return 'HUMANITARIAN & COMMUNITY';
+        } else if (`${post.category}` === "international") {
+            return 'INTERNATIONAL';
+        } else {
+            return 'PUBLIC SERVICE & MILITARY';
+        }
+    };
+    let catName = getCatName();
 
 
     return (
         <div>
             <div className="orgCard">
-                <img id="icon" className="single-org-icon" src={categoryIcon} />
+                <img id="icon" className="single-org-icon" src={categoryIcon} alt="" />
                 <div>
-                    <p className="category-name"><strong>{post.category}</strong></p>
+                    <p className="category-name"><strong>{catName}</strong></p>
                 </div>
                 <div className="single-org-item-container">
                     <p className='single-org-title'><strong>Organization Name:</strong></p>

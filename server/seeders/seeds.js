@@ -101,7 +101,7 @@ db.once("open", async () => {
       username: "Lana",
     },
     {
-      category: "human & civil rights",
+      category: "human-civil",
       orgName: "Urban League of Greater Pittsburgh",
       website: "https://ulpgh.org/",
       location: "Pittsburgh, Pennsylvania",
@@ -110,7 +110,7 @@ db.once("open", async () => {
       username: "Krieger",
     },
     {
-      category: "arts & culture",
+      category: "art-culture",
       orgName: "The Arts Community Alliance",
       website: "https://taca-arts.org/",
       location: "Dallas, Texas",
@@ -119,7 +119,7 @@ db.once("open", async () => {
       username: "Len",
     },
     {
-      category: "public service & military",
+      category: "public-military",
       orgName: "Twenty Two Until None",
       website: "https://www.22untilnone.org/",
       location: "Phoenix, Arizona",

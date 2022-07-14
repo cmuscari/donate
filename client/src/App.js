@@ -1,9 +1,9 @@
+import React, {useState} from 'react';
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
 
-
+import { setContext } from '@apollo/client/link/context';
 import Login from './pages/Login';
 import Album from './components/Homepage'
 import Header from './components/Header'
@@ -17,8 +17,19 @@ const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
 });
 
+// With the configuration of authLink, we use the setContext() function to retrieve the token from localStorage and set the HTTP request headers of every request to include the token, whether the request needs it or not.
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
 const client = new ApolloClient({
-  link: httpLink,
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
