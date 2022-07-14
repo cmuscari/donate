@@ -80,7 +80,7 @@ const OrgForm = () => {
 
 
     return (
-        <div>
+        <div className="post-form-container">
             <form className="post-form" onSubmit={handleFormSubmit}>
                 <div>
                     <h2 className="newpost-head">Let others know what YOU care about.<br></br>Share an organization here!</h2>
