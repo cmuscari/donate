@@ -16,7 +16,9 @@ import Auth from '../../utils/auth';
 import testCategoryIcon from '../../images/icons/animals.png';
 import { Link } from 'react-router-dom';
 import { QUERY_ORGS } from '../../utils/queries';
+import Icons from '../Icons'
 import { useQuery } from '@apollo/client';
+
 import Select from '../Select';
 import { QUERY_CATEGORY } from '../../utils/queries';
 import { useStoreContext } from '../../utils/globalstate';
@@ -50,17 +52,16 @@ export default function CategoryPage() {
 
 
   // render category icon based on selected category name
-  const getIcon = () => {
-    if (`${posts.category}` === 'children') {
-      return '../images/icons/children.png';
-    } else {
-      return '../images/icons/animals.png';
-    }
+  const getIcon = (category) => {
+    console.log("category", category);
+    var categoryList = Object.keys(Icons).filter(key => category.includes(key)) 
+    if (categoryList.length === 0) {
+      return "";
+    };
+    return Icons[categoryList[0]];
   };
+  console.log(posts[0]);
 
-  let categoryIcon = getIcon();
-
-  console.log(categoryIcon);
 
 
 
@@ -77,13 +78,12 @@ export default function CategoryPage() {
             pb: 2,
           }}
         >
-          <Container maxWidth="md">
+          <Container maxWidth="lg">
             <Stack
               direction="column"
               spacing={2}
               justifyContent="center"
             >
-              <Select/>
               {/* <Button id="filter-button" variant="contained">Search by Category</Button> */}
               {Auth.loggedIn() ? (<>
                 <Button id="new-post-button" variant="outlined" onClick={navigateToNewPost}>Post a New Organization</Button>
@@ -93,19 +93,18 @@ export default function CategoryPage() {
             </Stack>
           </Container>
         </Box>
-
-        <Container sx={{ py: 8 }} maxWidth="md">
+        <Container sx={{ py: 8 }} maxWidth="lg">
           {/* End hero unit */}
           <Grid container spacing={4}>
             {posts &&
               posts.map((post) => (
-                <Grid item key={post._id} xs={12} sm={6} md={4}>
+                <Grid item key={post._id} xs={12} sm={6} md={4} lg={3}>
                   <Link to={`/organization/${post._id}`}>
                     <Card id="org-container"
                       sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                     >
                       <CardContent className="container-content" sx={{ flexGrow: 1 }}>
-                        <img className="category-icon" src={testCategoryIcon} />
+                        <img className="category-icon" src={getIcon(post.category)} alt="" />
                         <Typography gutterBottom variant="h5" component="h2" id="org-card-name" className="org-name">
                           {post.orgName}
                         </Typography>
