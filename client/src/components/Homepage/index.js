@@ -1,9 +1,7 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
@@ -18,8 +16,6 @@ import { Link } from 'react-router-dom';
 import { QUERY_ORGS } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
 import Select from '../Select';
-import { QUERY_POSTS_BY_CATEGORY } from '../../utils/queries';
-import { useStoreContext } from '../../utils/globalstate';
 
 
 
@@ -33,7 +29,6 @@ export default function Album() {
   const navigateToNewPost = () => {
     navigate('/post');
   }
-  const { category } = useStoreContext();
 
 
   const { loading, data } = useQuery(QUERY_ORGS);
