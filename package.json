@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js",
     "build": "cd client && npm run build",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
@@ -16,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cmuscari/donate.git"
+    "url": "git+https://github.com/gpaytakov/donate-for-good.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cmuscari/donate/issues"
+    "url": "https://github.com/gpaytakov/donate-for-good/issues"
   },
-  "homepage": "https://github.com/cmuscari/donate#readme",
+  "homepage": "https://github.com/gpaytakov/donate-for-good#readme",
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@material-ui/icons": "^4.11.3",
