@@ -61,7 +61,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
   server.applyMiddleware({ app });
   // Serve up static assets, following two come into effect when we go into production
   if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "build", "../client/build/index.html")));
+    app.use(express.static(path.join(__dirname, "build")));
   }
 
   app.get("*", function (req, res) {
