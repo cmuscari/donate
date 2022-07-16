@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.05bb80ef.css",
+    "main.js": "/static/js/main.2bf3ee7b.js",
+    "static/media/header-image2.jpg": "/static/media/header-image2.6ea6ad8f19c7c1231cdd.jpg",
+    "static/media/environmental.png": "/static/media/environmental.34e60c82c8375d1cd00c.png",
+    "static/media/education.png": "/static/media/education.5dfcef66628bd3154aaa.png",
+    "static/media/international.png": "/static/media/international.475db89c5af6924f1fd8.png",
+    "static/media/civil-rights.png": "/static/media/civil-rights.e0303e8318a608cc1faa.png",
+    "static/media/arts.png": "/static/media/arts.2bc80c82e6acda3b07c9.png",
+    "static/media/military.png": "/static/media/military.f9af215c5861313c962a.png",
+    "static/media/humanitarian.png": "/static/media/humanitarian.7fafb409d7603d76414d.png",
+    "static/media/children.png": "/static/media/children.7b8e642988b1a3017119.png",
+    "static/media/animals.png": "/static/media/animals.9f2ac07c3b699beb1af2.png",
+    "index.html": "/index.html",
+    "main.05bb80ef.css.map": "/static/css/main.05bb80ef.css.map",
+    "main.2bf3ee7b.js.map": "/static/js/main.2bf3ee7b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.05bb80ef.css",
+    "static/js/main.2bf3ee7b.js"
+  ]
+}
