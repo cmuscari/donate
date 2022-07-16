@@ -11,6 +11,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST);
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { application } = require('express');
+const { FlashOnRounded } = require('@material-ui/icons');
 
 const PORT = process.env.PORT || 3001;
 // create a new Apollo server and pass in our schema data
@@ -22,8 +23,8 @@ const server = new ApolloServer({
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.use(cors());
 
