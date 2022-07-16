@@ -61,11 +61,12 @@ const startApolloServer = async (typeDefs, resolvers) => {
   server.applyMiddleware({ app });
   // Serve up static assets, following two come into effect when we go into production
   if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "../client/build")));
+    app.use(express.static(path.join(__dirname, "build", "../client/build/index.html")));
   }
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  app.get("*", function (req, res) {
+    const index = path.join(__dirname, "build", "index.html");
+    res.sendFile(index);
   });
   db.once("open", () => {
     app.listen(PORT, () => {
