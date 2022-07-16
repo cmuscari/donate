@@ -8,7 +8,7 @@ import { useStoreContext } from '../../utils/globalstate';
 
 
 export default function BasicSelect() {
-  const [category, setCategory] = React.useState('');
+  const [category] = React.useState('');
 
   const { newCategory } = useStoreContext();
 
