@@ -31,14 +31,8 @@ export default function Album() {
   }
 
 
-  const { loading, data } = useQuery(QUERY_ORGS);
+  const { data } = useQuery(QUERY_ORGS);
   const posts = data?.posts || [];
-
-  console.log(posts[0])
-  console.log(posts)
-
-
-
 
   // render category icon based on selected category name
   const getIcon = (category) => {
@@ -49,13 +43,6 @@ export default function Album() {
     };
     return Icons[categoryList[0]];
   };
-  console.log(posts[0]);
-  // let categoryIcon = getIcon(posts[0].category);
-
-  // console.log(categoryIcon);
-
-
-
 
   return (
     <ThemeProvider theme={theme}>

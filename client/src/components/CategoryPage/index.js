@@ -1,9 +1,7 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
@@ -13,9 +11,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import Auth from '../../utils/auth';
-import testCategoryIcon from '../../images/icons/animals.png';
 import { Link } from 'react-router-dom';
-import { QUERY_ORGS } from '../../utils/queries';
 import Icons from '../Icons'
 import { useQuery } from '@apollo/client';
 
@@ -46,11 +42,6 @@ export default function CategoryPage() {
       console.log(data);
       const posts = data?.postsByCategory || [];
 
-  console.log(posts)
-
-
-
-
   // render category icon based on selected category name
   const getIcon = (category) => {
     console.log("category", category);
@@ -60,11 +51,6 @@ export default function CategoryPage() {
     };
     return Icons[categoryList[0]];
   };
-  console.log(posts[0]);
-
-
-
-
 
   return (
     <ThemeProvider theme={theme}>

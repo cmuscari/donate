@@ -6,7 +6,6 @@ import { StoreProvider } from './utils/globalstate';
 
 import { setContext } from '@apollo/client/link/context';
 import Login from './pages/Login';
-import Album from './components/Homepage'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import OrgForm from './components/OrgForm';
@@ -14,7 +13,6 @@ import SignUpPage from './pages/SignUp';
 import SingleOrg from './pages/SingleOrg';
 import DonatePage from './pages/Donate';
 import Homepage from './pages/Home';
-import CategoryPage from './components/CategoryPage';
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
@@ -37,8 +35,6 @@ const client = new ApolloClient({
 });
 
 function App() {
-
-  const [showItem, setShowItem] = useState(false);
 
   return (
     <ApolloProvider client={client}>

@@ -10,7 +10,6 @@ const db = require('./config/connection');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST);
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { application } = require('express');
 
 const PORT = process.env.PORT || 3001;
 // create a new Apollo server and pass in our schema data
