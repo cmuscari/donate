@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.05bb80ef.css",
-    "main.js": "/static/js/main.2bf3ee7b.js",
+    "main.js": "/static/js/main.3c2f8af4.js",
     "static/media/header-image2.jpg": "/static/media/header-image2.6ea6ad8f19c7c1231cdd.jpg",
     "static/media/environmental.png": "/static/media/environmental.34e60c82c8375d1cd00c.png",
     "static/media/education.png": "/static/media/education.5dfcef66628bd3154aaa.png",
@@ -14,10 +14,10 @@
     "static/media/animals.png": "/static/media/animals.9f2ac07c3b699beb1af2.png",
     "index.html": "/index.html",
     "main.05bb80ef.css.map": "/static/css/main.05bb80ef.css.map",
-    "main.2bf3ee7b.js.map": "/static/js/main.2bf3ee7b.js.map"
+    "main.3c2f8af4.js.map": "/static/js/main.3c2f8af4.js.map"
   },
   "entrypoints": [
     "static/css/main.05bb80ef.css",
-    "static/js/main.2bf3ee7b.js"
+    "static/js/main.3c2f8af4.js"
   ]
 }

@@ -1,28 +1,10 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_POST } from '../../utils/mutations';
-import { QUERY_ORGS } from '../../utils/queries';
-
-
 
 const OrgForm = () => {
 
-    const [addPost, { error }] = useMutation(ADD_POST
-        //     , {
-        //     update(cache, { data: { addPost } }) {
-
-        //         // update post array's cache
-        //         const { posts } = cache.readQuery({ query: QUERY_ORGS });
-        //         cache.writeQuery({
-        //             query: QUERY_ORGS,
-        //             data: { posts: [addPost, ...posts] },
-        //         });
-        //     }
-        // }
-    );
-
-    let successMessage = '';
-
+    const [addPost] = useMutation(ADD_POST);
 
     const [textInfo, setTextInfo] = useState({
         category: "",
@@ -35,7 +17,6 @@ const OrgForm = () => {
 
     const handleFormSubmit = async event => {
         event.preventDefault();
-        console.log(textInfo);
 
         try {
             // add post to database

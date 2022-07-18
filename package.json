@@ -11,19 +11,19 @@
     "build": "cd client && npm run build"
   },
   "engines": {
-    "node": "10.16.0"
+    "node": "11.10.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cmuscari/donate.git"
+    "url": "git+https://github.com/gpaytakov/donate-for-good.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cmuscari/donate/issues"
+    "url": "https://github.com/gpaytakov/donate-for-good/issues"
   },
-  "homepage": "https://github.com/cmuscari/donate#readme",
+  "homepage": "https://github.com/gpaytakov/donate-for-good#readme",
   "dependencies": {
     "@apollo/client": "^3.6.9",
     "@material-ui/icons": "^4.11.3",
@@ -34,7 +34,7 @@
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^3.1.2",
     "react-router-dom": "^6.3.0",
-    "concurrently": "^7.2.2"
+    "serve": "^14.0.1"
   },
   "devDependencies": {
     "concurrently": "^7.2.2"
