@@ -10,7 +10,6 @@ const db = require('./config/connection');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST);
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { application } = require('express');
 
 const PORT = process.env.PORT || 3001;
 // create a new Apollo server and pass in our schema data
@@ -68,6 +67,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
   });
+  
   db.once("open", () => {
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
